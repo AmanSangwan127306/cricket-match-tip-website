@@ -1,0 +1,180 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
+
+</head>
+
+<body>}
+    <div class="containr-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Cricket Batting Tips</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto" id="navbar">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="mission">Our 10 match 1 करोड़(crord) plus mission </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="todaymatch">Today Match</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="tommorowmatch">Tommorow Matchs</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="oldpost">Old Post</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="bookies">Our Trusted online Bookies</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="league">Upcoming league & tournament</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="tricks">Cricket Sessions plus tricks</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="rule">Cricket match win rule &reports </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+
+    </div>
+    <div class="container-fluid p-3 text-center">
+        <h5>Click here to join us</h5>
+        <div id="link-div">
+            <div class="youtube d-inline" >
+                <h5>Telegram</h5>
+                <a href="https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g">
+                    <p>https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g</p>
+                </a>
+            </div>
+            <div class="tele d-inline">
+                <h5>Youtube</h5>
+                <a href="https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g">
+                    <p>https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g</p>
+                </a>
+            </div>
+            <div class="facebook d-inline">
+                <h5>WhatApp</h5>
+                <a href="https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g">
+                    <p>https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g</p>
+                </a>
+            </div>
+            <div class="whatsap d-inline">
+                <h5>Facebook</h5>
+                <a href="https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g">
+                    <p>https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <div class="maincontent">
+
+         {% for matches in matchdb%}
+
+
+           <div class="childbox-1">
+             <div class="childbox-header">
+               <div class="time" style="height: 20px;">
+                 {{matches.time}}
+
+                </div>
+
+
+               <script type="text/javascript">
+                  var a=new Date().getTime()
+                  return a
+               </script>
+               <div class="matchisstart" id="{{matches.id}}">
+                 <script type="text/javascript">
+
+                  var countDownDate = new Date("Sep 10 2021 {{matches.time}}").getTime();
+                  var x = setInterval(function() {
+                  var now = new Date().getTime();
+                  var distance = countDownDate - now;
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                  var dayhour=(days*24)+hours
+                  document.getElementById("{{matches.id}}").innerHTML = dayhour + "h "
+                  + minutes + "m " + seconds + "s ";
+                  if (distance < 0) {
+                   clearInterval(x);
+                   document.getElementById("{{matches.id}}").innerHTML = "EXPIRED";
+                  }
+                  }, 1000);
+                  </script>
+               </div>
+            </div>
+             <div class="teames">
+               <div class="hometeam">
+                 <div class="logo"><img src="{{matches.log1.url}}"  style="border-radius: 50%" width="50" height="50"></div>
+                 <div class="teamname"> {{matches.team1}}</div>
+               </div>
+               <div class="vs"> vs</div>
+               <div class="awayteam">
+                 <div class="logo"><img src="{{matches.log2.url}}" style="border-radius:50%" width="50" height="50"></div>
+                 <div class="teamname">{{matches.team2}}</div>
+               </div></div>
+               <p>{{matches.ground}}
+                 <span id="{{matches.team1}}" >....</span>
+                 <span id="{{matches.ground}}" style="display: none;">{{matches.winner}}</span></p>
+
+               <button onclick="{{matches.team1}}()" id="{{matches.team2}}" style="float:right;">Check Winner</button>
+               <div style="float:left; width:100px;">
+               <a href="http://www.facebook.com/sharer.php?u=https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g"><img src="/media/img/facebook.png" class="img-fluid pull-xs-left" alt="..." style="height: 25px; width:25px;"></a>
+               <a href="http://www.instagram.com/share?url=https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g"><img src="/media/img/instagram.jpeg" style="height: 20px; width:20px;"></a>
+               <a href="http://api.whatsapp.com/send?text=https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g" data-action="share/whatsapp/share"><img src="/media/img/whatapp.png" style="height:20px;width:20px;"alt="share on WhatApp"> </a>
+               <a href="https://twitter.com/intent/tweet?url=https://www.youtube.com/channel/UCoRvWExs2u_-2jzPCuL4B8g"><img src="/media/img/twitter.jpeg" alt="Share on Twitter "style="height:20px;widht:20px;"></a>
+             </div>
+               <script >
+
+             function {{matches.team1}}(){
+               var dots=document.getElementById("{{matches.team1}}");
+               var moretext=document.getElementById("{{matches.ground}}");
+               var btntext=document.getElementById("{{matches.team2}}");
+
+               if(dots.style.display==="none"){
+                 dots.style.display="inline";
+                 btntext.innerHTML="Check Winner";
+                 moretext.style.display="none";
+               }
+               else{
+                 dots.style.display="none";
+                 btntext.innerHTML="Read less";
+                 moretext.style.display="inline";
+               }
+             }
+
+           </script>
+         </div>
+
+      {%endfor%}
+        {% block extend1 %}
+
+        {% endblock %}
+</body>
+
+</html>
